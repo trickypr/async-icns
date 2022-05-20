@@ -1,22 +1,21 @@
 {
-  "name": "png2icns",
+  "name": "icnsjs",
   "version": "0.0.1",
   "bin": {
     "png2icns": "./cli.js"
   },
   "dependencies": {
-    "fs-extra": "^0.30.0",
-    "commander": "^2.9.0"
+    "commander": "^9.2.0"
   },
-  "description": "A module to convert a .png file to an .icns file.",
-  "main": "png2icns.js",
+  "description": "Converts any image file to .icns file using native libraries",
+  "main": "icns.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "github.com/moinism/png2icns"
+    "url": "github.com/trickypr/icnsjs"
   },
   "keywords": [
     "png",
@@ -25,6 +24,6 @@
     "mac",
     "convert"
   ],
-  "author": "Moin Uddin <me@moin.im> (https://moin.im/)",
+  "author": "TrickyPR",
   "license": "MIT"
 }

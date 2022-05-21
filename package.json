@@ -9,7 +9,7 @@
   },
   "description": "Converts any image file to .icns file using native libraries",
   "main": "icns.js",
-  "types": "icns.d.ts",
+  "types": "types.d.ts",
   "devDependencies": {
     "@otris/jsdoc-tsd": "^2.0.11",
     "jsdoc": "^3.6.10"

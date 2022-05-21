@@ -1,77 +1,76 @@
-
 [![npm version](https://badge.fury.io/js/png2icns.svg)](https://badge.fury.io/js/png2icns)
 [![License](https://img.shields.io/badge/license-MIT%20License-blue.svg?style=flat)](https://github.com/moinism/png2icns/blob/master/LICENSE)
 
+<div align="center">
 
-# png2icns
+# icnsjs
 
-> A command line and nodejs module to convert a .png file to an .icns file. Works on Mac only.
+Convert image files to MacOS icon file (`.icns`) files.
 
-It expects a `1024*1024` png file to convert. If your files is less in size then skip the maximum size in `options`.
+![License](https://img.shields.io/npm/l/icnsjs?style=for-the-badge)
+![Compat](https://img.shields.io/badge/Compatibility-MacOS-yellow?style=for-the-badge)
+![Version](https://img.shields.io/npm/v/icnsjs?style=for-the-badge)
 
-For example, if your file is `512*512`:
-
-Command line:
-```bash
-$ png2icns file.png -s 16,32,64,128,256
-```
-
-In JavaScript:
-```javascript
-png2icns({
-  in: 'file.png',
-  sizes: [16, 32, 64, 128, 256]
-}, function () {
-  console.log('Successfully converted.');
-});
-```
-
-
+</div>
 
 ## Installation
 
+CLI global install:
 
-For command line usage:
-
-````bash
-npm install png2icns -g
-````
+```sh
+npm install icnsjs -g
+```
 
 To use programmatically (in NodeJS).
 
-````bash
-npm install png2icns --save
-````
+```bash
+npm install icnsjs --save
+# Or for yarn
+yarn add icnsjs
+```
 
+## CLI Usage
 
-## Usage
+```sh
+$ icnsjs file.png
+```
 
+Note that if your icon is smaller than `1024 × 1024`, you will have to remove one of the size options. Make sure that the largest size you request is less than half the size as your icon. For example, if one of your icons was `512 × 512`, the max icon size would be `256 × 256`:
 
-### Command line
+```sh
+$ icnsjs file.png -s 16,32,64,128,256
+```
 
-Simply give it path of png file you want to convert.
+You can aso specify the alternative output:
 
-````bash
-$ png2icns file_to_convert.png
-````
+```sh
+$ icnsjs file.png -o output.icns
+```
 
-````bash
-$ png2icns file.png
-$ png2icns file.png -o file.icns // file to output as
-$ png2icns file.png -o file.icns -s 16,32,64,128,256,512 // sizes you want in your .icns file
-````
+## As a library
 
-### JavaScript
+```js
+const { convert } = require('icnsjs')
 
+async function main() {
+  await convert({ input: 'file.png', output: 'output.icns' })
+}
 
-```javascript
-var png2icns = require('png2icns');
+main()
+```
 
-png2icns({
-  in: 'file.png', // required
-  out: 'output.icns' // optional. .icns file name to save the file as. Default: icon.icns
-  sizes: [16, 32, 64, 128, 256, 512] // optional.
-}, function () {
-  console.log('Successfully converted.');
-});
+You can also specify the output size in the same way as specifed above:
+
+```js
+const { convert } = require('icnsjs')
+
+async function main() {
+  await convert({
+    input: 'file.png',
+    output: 'output.icns',
+    sizes: [16, 32, 64, 128, 256],
+  })
+}
+
+main()
 ```

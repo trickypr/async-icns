@@ -1,6 +1,6 @@
 {
   "name": "async-icns",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "bin": {
     "async-icns": "./cli.js"
   },

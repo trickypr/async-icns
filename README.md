@@ -1,6 +1,3 @@
-[![npm version](https://badge.fury.io/js/png2icns.svg)](https://badge.fury.io/js/png2icns)
-[![License](https://img.shields.io/badge/license-MIT%20License-blue.svg?style=flat)](https://github.com/moinism/png2icns/blob/master/LICENSE)
-
 <div align="center">
 
 # icnsjs

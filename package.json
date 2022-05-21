@@ -1,17 +1,21 @@
 {
   "name": "icnsjs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "bin": {
-    "png2icns": "./cli.js"
+    "icnsjs": "./cli.js"
   },
   "dependencies": {
     "commander": "^9.2.0"
   },
   "description": "Converts any image file to .icns file using native libraries",
   "main": "icns.js",
-  "devDependencies": {},
+  "types": "icns.d.ts",
+  "devDependencies": {
+    "@otris/jsdoc-tsd": "^2.0.11",
+    "jsdoc": "^3.6.10"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "types": "jsdoc -t node_modules/@otris/jsdoc-tsd -r icns.js && mv out/jsdoc-results.d.ts icns.d.ts"
   },
   "repository": {
     "type": "git",

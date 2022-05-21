@@ -1,8 +1,8 @@
 {
-  "name": "icnsjs",
+  "name": "async-icns",
   "version": "0.0.0",
   "bin": {
-    "icnsjs": "./cli.js"
+    "async-icns": "./cli.js"
   },
   "dependencies": {
     "commander": "^9.2.0"
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/trickypr/icnsjs"
+    "url": "github.com/trickypr/async-icns"
   },
   "keywords": [
     "png",
